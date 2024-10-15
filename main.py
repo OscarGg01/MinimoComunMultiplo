@@ -1,20 +1,20 @@
 from src.logica.OperacionesEnteros import OperacionesEnteros
 
 if __name__ == '__main__':
-    cantidadNumeros = int(input("Cantidad de números: "))
+    cantidadNumeros = int(input("Ingrese cantidad de números: "))
     numeros = []
 
     for i in range(cantidadNumeros):
         while True:
             try:
                 print(f"Número {i+1:2}: ", end="", flush=True)
-                numero = int(input(""))  # Intentar convertir la entrada a entero
+                numero = int(input(""))
                 numeros.append(numero)
-                break  # Si todo está bien, salir del bucle
+                break
             except ValueError:
                 print("Error: Debes ingresar un número entero válido. Inténtalo de nuevo.")
 
-    print(f"Números = {numeros}")
+    print(f"Números ingresados= {numeros}")
     operacionesEnteros = OperacionesEnteros(numeros)
     try:
         print(f"MCM= {operacionesEnteros.calcularMCM()}")
